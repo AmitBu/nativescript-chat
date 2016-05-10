@@ -9,7 +9,7 @@ var DemoAppModel = (function (_super) {
 
   DemoAppModel.prototype.doInit = function () {
     firebase.init({
-      url: 'https://barternet.firebaseio.com'
+      url: 'https://barternet.firebaseio.com/'
     }).then(
         function (result) {
           dialogs.alert({

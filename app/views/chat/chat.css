@@ -1,0 +1,12 @@
+ListView {
+    padding: 10;
+}
+
+Label {
+    font-size:12;
+}
+
+.title {
+    font-weight: bold;
+    font-size:12;
+}

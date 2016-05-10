@@ -1,0 +1,29 @@
+<Page loaded="loaded">
+    <Page.actionBar>
+        <ActionBar title="Chat"></ActionBar>
+    </Page.actionBar>
+    <StackLayout>
+        <GridLayout rows="auto, *" columns="2*, *">
+            <TextField row="0" col="0" hint="Message" keyboardType="text" text="{{ newMessage }}"/>
+            <Button row="0" col="1" text="Send" tap="addMessage"/>
+
+
+
+        <ListView items="{{ messageList }}" id="messageList" row="1" colSpan="2">
+            <ListView.itemTemplate>
+                <StackLayout>
+                    <DockLayout width="auto">
+                        <Label text="User: " dock="left" class="title" />
+                        <Label text="{{ user }}" dock="left" />
+                    </DockLayout>
+                    <DockLayout width="auto">
+                        <Label text=" Message: " class="title" />
+                        <Label text="{{ message }}"/>
+                    </DockLayout>
+                </StackLayout>
+            </ListView.itemTemplate>
+        </ListView>
+
+        </GridLayout>
+    </StackLayout>
+</Page>

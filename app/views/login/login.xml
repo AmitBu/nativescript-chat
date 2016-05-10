@@ -1,0 +1,10 @@
+<Page loaded="loaded">
+    <StackLayout>
+        <TextField hint="Email" keyboardType="email" autocorrect="false" text="{{ email }}" />
+        <TextField hint="Password" secure="true" text="{{ password }}" />
+        <Button text="Login" tap="shit" />
+
+        <Label text="{{ email }}"></Label>
+        <Label text="{{ password }}"></Label>
+    </StackLayout>
+</Page>
