@@ -1,6 +1,7 @@
 var config = require("../../shared/config");
 var observableArrayModule = require("data/observable-array");
 var firebase = require("nativescript-plugin-firebase");
+var moment = require("moment");
 
 function indexOf(item) {
     var match = -1;
@@ -30,6 +31,7 @@ function Chat(items) {
                     viewModel.unshift({
                         message: result.value.message,
                         user: result.value.user,
+                        date: result.value.date,
                         id: result.key
                     });
                 }
@@ -66,7 +68,8 @@ function Chat(items) {
         return firebase.push(
             table, {
                 'message': message,
-                'user': user
+                'user': user,
+                'date': moment().format('DD/MM, hh:mm')
             }
         ).then(function(item) {
                 console.log("message added");

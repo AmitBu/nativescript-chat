@@ -1,8 +1,9 @@
 <Page loaded="loaded">
+    <Page.actionBar>
+        <ActionBar title="Chat Login"></ActionBar>
+    </Page.actionBar>
     <StackLayout>
         <TextField hint="Username" autocorrect="false" text="{{ username }}" />
         <Button text="Login" tap="addUser" />
-
-        <Label text="{{ username }}"></Label>
     </StackLayout>
 </Page>

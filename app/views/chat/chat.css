@@ -3,7 +3,12 @@ ListView {
 }
 
 ListView Label {
+    margin-left:10;
     padding-top: 10;
+}
+
+TextField {
+    padding-left:10;
 }
 
 Label {
@@ -13,4 +18,11 @@ Label {
 .title {
     font-weight: bold;
     font-size:12;
+}
+
+.date {
+    font-size:10;
+    font-style: inherit;
+    padding-top:12;
+    color: #868686;
 }

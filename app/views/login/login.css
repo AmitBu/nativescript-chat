@@ -13,4 +13,6 @@ Button {
     padding: 10;
     background-color: #034793;
     color:#FFF;
+    width:75%;
+    text-align: center;
 }

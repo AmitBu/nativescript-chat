@@ -15,6 +15,9 @@
                     <DockLayout width="auto">
                         <Label text="@" dock="left" class="title" />
                         <Label text="{{ user }}" dock="left"  class="title" />
+                        <Label text=" (" dock="left"  class="date" />
+                        <Label text="{{ date }}" dock="left"  class="date" />
+                        <Label text=")" dock="left"  class="date" />
                         <Label text=": " dock="left" class="title" />
                         <Label text="{{ message }}"/>
                     </DockLayout>

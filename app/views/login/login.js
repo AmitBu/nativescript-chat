@@ -19,11 +19,6 @@ exports.loaded = function(args) {
 exports.addUser = function() {
     if (viewModel.get("username")) {
         config.username = viewModel.get("username");
-
-        dialogsModule
-            .alert("Your account was successfully created.")
-            .then(function () {
-                frameModule.topmost().navigate("views/chat/chat");
-            });
+        frameModule.topmost().navigate("views/chat/chat");
     }
 };
