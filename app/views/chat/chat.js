@@ -1,9 +1,10 @@
+var config = require("../../shared/config");
 var dialogsModule = require("ui/dialogs");
 var frameModule = require("ui/frame");
 var viewModule = require("ui/core/view");
 var observableModule = require("data/observable");
 var messageListModel = require("../../shared/view-models/chat-model");
-var messageList = new messageListModel({});
+var messageList = new messageListModel([]);
 
 var pageData = new observableModule.Observable({
     messageList: messageList,
@@ -19,6 +20,5 @@ exports.loaded = function(args) {
 };
 
 exports.addMessage = function() {
-    console.log("sadasd");
-    messageList.addMessage(pageData.get("newMessage"));
+    messageList.addMessage(pageData.get("newMessage"), config.username);
 };

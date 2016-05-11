@@ -1,5 +1,9 @@
 ListView {
-    padding: 10;
+    margin: 10;
+}
+
+ListView Label {
+    padding-top: 10;
 }
 
 Label {

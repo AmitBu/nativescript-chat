@@ -13,6 +13,7 @@ function indexOf(item) {
 }
 
 function Chat(items) {
+    var table = '/chat';
     items = items || {};
 
     // You can add properties to observables on creation
@@ -25,8 +26,8 @@ function Chat(items) {
             matches.push(result);
 
             if (result.type === "ChildAdded") {
-                if (result.value.message) {
-                    viewModel.push({
+                if (result.value.message && viewModel.indexOf(result) === -1) {
+                    viewModel.unshift({
                         message: result.value.message,
                         user: result.value.user,
                         id: result.key
@@ -42,9 +43,7 @@ function Chat(items) {
                 });
 
             }
-            //console.log(JSON.stringify(viewModel.get("messageList")));
         };
-
 
         firebase.addChildEventListener(onChildEvent, "/chat");
     };
@@ -63,12 +62,11 @@ function Chat(items) {
         );
     };
 
-    viewModel.addMessage = function(message) {
-        console.log("msg: " + message);
+    viewModel.addMessage = function(message, user) {
         return firebase.push(
-            '/chat', {
+            table, {
                 'message': message,
-                'user': "Amit"
+                'user': user
             }
         ).then(function(item) {
                 console.log("message added");
@@ -77,12 +75,10 @@ function Chat(items) {
             })
     };
 
-    viewModel.getMessages = function() {
-        return firebase.get("/chat").then(function(result) {
-
-        })
+    viewModel.deleteMessage = function(index) {
+        var id = viewModel.getItem(index).id;
+        return firebase.remove(table + "/" + id);
     };
-
 
 
     return viewModel;

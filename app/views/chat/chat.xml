@@ -13,11 +13,9 @@
             <ListView.itemTemplate>
                 <StackLayout>
                     <DockLayout width="auto">
-                        <Label text="User: " dock="left" class="title" />
-                        <Label text="{{ user }}" dock="left" />
-                    </DockLayout>
-                    <DockLayout width="auto">
-                        <Label text=" Message: " class="title" />
+                        <Label text="@" dock="left" class="title" />
+                        <Label text="{{ user }}" dock="left"  class="title" />
+                        <Label text=": " dock="left" class="title" />
                         <Label text="{{ message }}"/>
                     </DockLayout>
                 </StackLayout>

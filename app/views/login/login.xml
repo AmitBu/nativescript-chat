@@ -1,10 +1,8 @@
 <Page loaded="loaded">
     <StackLayout>
-        <TextField hint="Email" keyboardType="email" autocorrect="false" text="{{ email }}" />
-        <TextField hint="Password" secure="true" text="{{ password }}" />
-        <Button text="Login" tap="shit" />
+        <TextField hint="Username" autocorrect="false" text="{{ username }}" />
+        <Button text="Login" tap="addUser" />
 
-        <Label text="{{ email }}"></Label>
-        <Label text="{{ password }}"></Label>
+        <Label text="{{ username }}"></Label>
     </StackLayout>
 </Page>
