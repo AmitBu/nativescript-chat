@@ -1,4 +1,4 @@
 module.exports = {
-    apiUrl: "https://barternet.firebaseio.com/",
+    apiUrl: "https://nativescriptchat.firebaseio.com/",
     username: ""
 };
